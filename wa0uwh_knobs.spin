@@ -95,12 +95,14 @@ PUB Demo | okay, LoopCnt, ChildCogID, E0, B0, E1, B1, B0prev, B1prev
 
 
 DAT
-PUB Start(cntEnc0, but0, cntEnc1, but1) | okay
+PUB Start(pcntEnc0, pbut0, pcntEnc1, pbut1) | okay
+' The Arguments are pointers (p) to variable (counter) within the calling APP
 ' A typical APP will, check Counter for non Zero, take the value, and then reset Counter to Zero
+' See usage in the above Demo Method
 
     stop
 
-    okay := cog := (cognew(RotaryEncoder(cntEnc0, but0, cntEnc1, but1), @cogStack) +1)
+    okay := cog := (cognew(RotaryEncoder(pcntEnc0, pbut0, pcntEnc1, pbut1), @cogStack) +1)
 
     return cog
 
