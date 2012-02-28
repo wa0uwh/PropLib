@@ -70,9 +70,11 @@ PUB Demo | okay, LoopCnt, ChildCogID, E0, B0, E1, B1, B0prev, B1prev
 
       repeat
 
-        ' A trick to reset Buttons that can be used in an App: Hold both down
+        'A trick to reset Buttons and Encoders to Zero,
+        ' this can be used in an App: Hold both Buttons down
         if B0 > B0prev AND B1 > B1prev
           B0 := B1 := 0
+          E0 := E1 := 0
         B0prev := B0
         B1prev := B1
 
